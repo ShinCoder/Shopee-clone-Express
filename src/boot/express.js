@@ -8,7 +8,6 @@ import { createRequire } from 'module';
 import { router } from '../modules/index.js';
 
 const require = createRequire(import.meta.url);
-const swaggerDocument = require('../models/swagger.json');
 
 const app = express();
 
@@ -22,7 +21,6 @@ app.enable('trust proxy');
 
 if (process.env.NODE_ENV === 'development') {
   app.use(logger('dev'));
-  app.use('/swagger', swagger.serve, swagger.setup(swaggerDocument));
 }
 
 app.use(bodyParser.json());

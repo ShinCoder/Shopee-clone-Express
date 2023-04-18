@@ -3,4 +3,4 @@ import UserController from './user.controller.js';
 
 export const userRouter = Router();
 
-userRouter.route('/notification').get(UserController.getNotification);
+userRouter.route('/:id/notification').get(UserController.getNotification);
